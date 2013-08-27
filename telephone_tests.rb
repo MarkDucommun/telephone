@@ -78,7 +78,8 @@ describe "List" do
   let(:task){ double(:task,
                      title: "a task",
                      description: "it's incomplete",
-                     status: false, created_at: Time.now()) }
+                     status: false,
+                     created_at: Time.now()) }
 
   describe "#initialize" do
     it "should initialize with a title" do
@@ -120,10 +121,10 @@ describe "List" do
     end
 
     it "should mark all tasks complete" do
-      5.times { list.add_task(task) }
+      list.add_task(task)
       list.complete_all
-      incomplete = list.tasks.select { |task| task.status == false }
-      expect(incomplete).to eq []
+      task.should_receive(:mark_as_complete!)
     end
   end
 end
+
