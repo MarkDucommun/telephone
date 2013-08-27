@@ -29,5 +29,9 @@ class List
     self.tasks = []
   end
 
+  def add_task(task_obj)
+    self.tasks << task_obj
+  end
+
 
 end
