@@ -25,4 +25,15 @@ describe Task do
       expect(task).to respond_to(:status)
     end
   end
+
+  describe "#mark_as_complete!" do
+    it "should have mark_as_complete " do
+      expect(task).to respond_to(:mark_as_complete!)
+    end
+
+    it "should change status to true" do
+      task.mark_as_complete!
+      expect(task.status).to be_true
+    end
+  end
 end
