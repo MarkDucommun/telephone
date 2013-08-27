@@ -80,6 +80,10 @@ describe "List" do
     it "should initialize with a title" do
       expect { List.new("A Title") }.not_to raise_error
     end
+
+    it "should initialize with tasks as an empty array" do
+      expect(list.tasks).to eq([])
+    end
   end
 
   describe "#title" do
