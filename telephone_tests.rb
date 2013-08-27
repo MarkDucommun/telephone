@@ -127,5 +127,18 @@ describe "List" do
       list.complete_all
     end
   end
+
+  describe "#complete?" do
+    it "should have complete_all" do
+      expect(list).to respond_to(:complete_all)
+    end
+
+    it "should mark all tasks complete" do
+      task = double(:task)
+      task.should_receive(:complete?)
+      list.add_task(task)
+      list.complete?
+    end
+  end
 end
 
