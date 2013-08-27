@@ -97,4 +97,16 @@ describe "List" do
       expect(list).to respond_to(:tasks)
     end
   end
+
+  describe "#add_task" do
+    it "should have method add_task" do
+      expect(list).to respond_to(:add_task)
+    end
+
+    it "should accept a task" do
+      task = double(:task, title: "a task", description: "it's incomplete", status: false, created_at: Time.now())
+      list.add_task(task)
+      expect(list.tasks.size).to eq 1
+    end
+  end
 end
