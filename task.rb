@@ -22,8 +22,11 @@ class Task
 end
 
 class List
-  attr_accessor :title
+  attr_accessor :title, :tasks
+
   def initialize(title)
     self.title = title
   end
+
+
 end
