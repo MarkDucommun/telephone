@@ -47,4 +47,24 @@ describe Task do
       expect(task.status).to be_false
     end
   end
+
+  describe "#complete?" do
+    it "should have complete?" do
+      expect(task).to respond_to(:complete?)
+    end
+    
+    context "task incomplete" do
+      it "should return incomplete" do
+        expect(task.complete?).to be_false
+      end
+    end
+    
+    context "task complete" do
+      let(:task){ Task.new("A Task", "It's already complete!", true)}
+
+      it "should return complete" do
+        expect(task.complete?).to be_true
+      end
+    end  
+  end
 end
