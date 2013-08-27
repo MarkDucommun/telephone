@@ -87,4 +87,10 @@ describe "List" do
       expect(list).to respond_to(:title)
     end
   end
+
+  describe "#tasks" do
+    it "should have tasks" do
+      expect(list).to respond_to(:tasks)
+    end
+  end
 end
