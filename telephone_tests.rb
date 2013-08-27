@@ -36,4 +36,15 @@ describe Task do
       expect(task.status).to be_true
     end
   end
+
+  describe "#mark_as_incomplete!" do
+    it "should have mark_as_incomplete " do
+      expect(task).to respond_to(:mark_as_incomplete!)
+    end
+
+    it "should change status to false" do
+      task.mark_as_incomplete!
+      expect(task.status).to be_false
+    end
+  end
 end
