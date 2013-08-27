@@ -33,5 +33,8 @@ class List
     self.tasks << task_obj
   end
 
+  def complete_all
+  end
+
 
 end
