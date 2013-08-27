@@ -11,4 +11,7 @@ class Task
     self.status = true
   end
 
+  def mark_as_incomplete!
+    self.status = false
+  end
 end
