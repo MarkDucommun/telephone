@@ -26,6 +26,7 @@ class List
 
   def initialize(title)
     self.title = title
+    self.tasks = []
   end
 
 
