@@ -121,9 +121,10 @@ describe "List" do
     end
 
     it "should mark all tasks complete" do
+      task = double(:task)
+      task.should_receive(:mark_as_complete!)
       list.add_task(task)
       list.complete_all
-      task.should_receive(:mark_as_complete!)
     end
   end
 end
