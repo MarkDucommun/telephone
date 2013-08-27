@@ -34,7 +34,6 @@ class List
   end
 
   def complete_all
+    self.tasks.map!{ |task| task.mark_as_complete! }
   end
-
-
 end
