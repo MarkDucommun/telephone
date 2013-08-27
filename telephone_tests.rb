@@ -118,5 +118,12 @@ describe "List" do
     it "should have complete_all" do
       expect(list).to respond_to(:complete_all)
     end
+
+    it "should mark all tasks complete" do
+      5.times { list.add_task(task) }
+      list.complete_all
+      incomplete = list.tasks.select { |task| task.status == false }
+      expect(incomplete).to eq []
+    end
   end
 end
