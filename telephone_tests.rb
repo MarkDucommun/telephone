@@ -75,6 +75,10 @@ end
 
 describe "List" do
   let(:list){ List.new("A Title")}
+  let(:task){ double(:task,
+                     title: "a task",
+                     description: "it's incomplete",
+                     status: false, created_at: Time.now()) }
 
   describe "#initialize" do
     it "should initialize with a title" do
@@ -104,9 +108,15 @@ describe "List" do
     end
 
     it "should accept a task" do
-      task = double(:task, title: "a task", description: "it's incomplete", status: false, created_at: Time.now())
+      
       list.add_task(task)
       expect(list.tasks.size).to eq 1
+    end
+  end
+
+  describe "#complete_all" do
+    it "should have complete_all" do
+      expect(list).to respond_to(:complete_all)
     end
   end
 end
