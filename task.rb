@@ -1,10 +1,11 @@
 class Task
   attr_accessor :title, :description, :created_at, :status
 
-  def initialize(title,description)
+  def initialize(title,description,status=false)
     self.title = title
     self.description = description
     self.created_at = Time.now()
+    self.status = status
   end
 
   def mark_as_complete!
@@ -14,4 +15,10 @@ class Task
   def mark_as_incomplete!
     self.status = false
   end
+
+  def complete?
+    return self.status
+  end
+
+
 end
