@@ -18,6 +18,10 @@ describe Task do
     it "should have created at" do
       expect(task).to respond_to(:created_at)
     end
+
+    it "should return a Time" do
+      expect task.created_at.class == Time
+    end
   end
 
   describe "#status" do
@@ -66,5 +70,21 @@ describe Task do
         expect(task.complete?).to be_true
       end
     end  
+  end
+end
+
+describe "List" do
+  let(:list){ List.new("A Title")}
+
+  describe "#initialize" do
+    it "should initialize with a title" do
+      expect { List.new("A Title") }.not_to raise_error
+    end
+  end
+
+  describe "#title" do
+    it "should have a title" do
+      expect(list).to respond_to(:title)
+    end
   end
 end
