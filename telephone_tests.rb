@@ -3,7 +3,7 @@ require_relative 'task'
 
 describe Task do
   let(:task) { Task.new("A Title", "A Description") }
- 
+
   describe "#initialize" do
     it "should require two arguments" do
       expect { Task.new }.to raise_error
@@ -21,7 +21,7 @@ describe Task do
   end
 
   describe "#status" do
-    it "should have status"
+    it "should have status" do
       expect(task).to respond_to(:status)
     end
   end
