@@ -7,4 +7,8 @@ class Task
     self.created_at = Time.now()
   end
 
+  def mark_as_complete!
+    self.status = true
+  end
+
 end
