@@ -129,11 +129,11 @@ describe "List" do
   end
 
   describe "#complete?" do
-    it "should have complete_all" do
-      expect(list).to respond_to(:complete_all)
+    it "should have complete?" do
+      expect(list).to respond_to(:complete?)
     end
 
-    it "should mark all tasks complete" do
+    it "should check if all tasks are complete" do
       task = double(:task)
       task.should_receive(:complete?)
       list.add_task(task)
